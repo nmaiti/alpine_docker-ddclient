@@ -3,9 +3,8 @@ set -o errexit -o pipefail -o nounset
 
 mypath=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-imagetag=ddclient
-containername=${imagetag}
-#imagetag=rwd1/gui
+imagetag=nbmaiti/ddclient
+containername=ddclient
 stdparams=""
 additionalparams=""
 

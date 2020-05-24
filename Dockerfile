@@ -12,8 +12,9 @@ RUN apk upgrade --no-cache \
 	perl-net-ip \
 	perl-yaml \
 	perl-log-log4perl \
-	perl-io-socket-ssl
-RUN cpan Data::Validate::IP
+	perl-io-socket-ssl \
+    && cpan Data::Validate::IP \
+	&& apk del make
 
 RUN mkdir -p /etc/ddclient/ \
 	&& mkdir -p /var/cache/ddclient/
@@ -27,11 +28,12 @@ RUN DDCLIENT_VERSION=$(curl -sX GET "https://api.github.com/repos/ddclient/ddcli
 	&& tar xf ddclient.tar.gz \
 	&& cd ddclient* \
 	&& cp ddclient /usr/bin/ddclient \
-	&& cp sample-etc_ddclient.conf /etc/ddclient/ddclient.conf.original
+	&& cp sample-etc_ddclient.conf /etc/ddclient/ddclient.conf.original 
+
 
 
 VOLUME [ "/client/" ]
 
 
-COPY entrypoint.sh /entrypoint.sh
+COPY run.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

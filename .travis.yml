@@ -2,7 +2,7 @@ dist: bionic
 sudo: required
 env:
   global:
-    - DOCKER_REPO=nbmaiti/ddclient
+    - DOCKER_REPO=ddclient
 before_install:
   - curl -fsSL https://get.docker.com | sh
   - echo '{"experimental":"enabled"}' | sudo tee /etc/docker/daemon.json

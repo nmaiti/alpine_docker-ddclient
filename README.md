@@ -1,3 +1,5 @@
+![License MIT](https://img.shields.io/badge/license-MIT-blue.svg) [![Build Status](https://travis-ci.org/nmaiti/alpine_docker-ddclient.svg?branch=master)](https://travis-ci.org/nmaiti/alpine_docker-ddclient) [![](https://img.shields.io/docker/stars/nbmaiti/ddclient.svg)](https://hub.docker.com/r/nbmaiti/ddclient 'DockerHub') [![](https://img.shields.io/docker/pulls/nbmaiti/ddclient.svg)](https://hub.docker.com/r/nbmaiti/ddclient 'DockerHub')
+
 # docker-ddclient Alpine
 docker-ddclient using alpine linux container
 

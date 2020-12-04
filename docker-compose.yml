@@ -6,5 +6,5 @@ services:
     hostname: ddclient
     restart: always
     volumes:
-      - ./config:/config
+      - ./ddclient-config:/config
         

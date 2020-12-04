@@ -15,7 +15,7 @@ function build {
 
 function run {
 	docker run -it --rm ${stdparams} \
-	-v ${mypath}/config/:/config \
+	-v ${mypath}/ddclient-config/:/config \
 	--name ${containername} --hostname ${containername} ${additionalparams} ${imagetag} 
 }
 

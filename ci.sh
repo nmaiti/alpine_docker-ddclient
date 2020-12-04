@@ -13,11 +13,12 @@
 # Created By :  
 ###################################################################
 #!/bin/bash
+# removed ppc64le temoporaryly as alpine repo is bad now
 
 if [ "$TRAVIS_PULL_REQUEST" = "true" ] || [ "$TRAVIS_BRANCH" != "master" ]; then
   docker buildx build \
     --progress plain \
-    --platform=linux/amd64,linux/386,linux/arm64,linux/arm/v7,linux/ppc64le \
+    --platform=linux/amd64,linux/386,linux/arm64,linux/arm/v7\
     .
   exit $?
 fi
@@ -25,7 +26,7 @@ echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERID --password-stdin &> /dev/
 TAG="${TRAVIS_TAG:-latest}"
 docker buildx build \
      --progress plain \
-    --platform=linux/amd64,linux/386,linux/arm64,linux/arm/v7,linux/ppc64le \
+    --platform=linux/amd64,linux/386,linux/arm64,linux/arm/v7 \
     -t $DOCKER_USERID/$DOCKER_REPO:$TAG \
     --push \
     .

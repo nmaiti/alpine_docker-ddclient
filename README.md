@@ -5,7 +5,8 @@ docker-ddclient using alpine linux container
 
 use ddclient to update dynamic dns of name servers.
 Example configs are kept inside /etc/ddclient/config
-put the ddclient.conf inside ddclient-config folder
+put the ddclient.conf inside ddclient-config folder.
+Add your ddns configuration and secrets here.
 
 ## Usage
 ### Using Dockerfile
